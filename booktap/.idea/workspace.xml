@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5f1260ab-dffa-4b7a-aaa8-ecb1bc839e11" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1R5GU1iP9pZalsUoituLj1e2e02" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/offers" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/offers" />
+      <recent name="$PROJECT_DIR$/favourite" />
+      <recent name="$PROJECT_DIR$/book" />
+      <recent name="$PROJECT_DIR$/supplier" />
+      <recent name="$PROJECT_DIR$/customer" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="booktap" type="Python.DjangoServer" factoryName="Django server">
+      <module name="booktap" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f1260ab-dffa-4b7a-aaa8-ecb1bc839e11" name="Default Changelist" comment="" />
+      <created>1568949555403</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568949555403</updated>
+      <workItem from="1568949556779" duration="11861000" />
+      <workItem from="1568961959632" duration="1994000" />
+      <workItem from="1568972928251" duration="3376000" />
+      <workItem from="1568976370704" duration="7824000" />
+      <workItem from="1569035608518" duration="2640000" />
+      <workItem from="1569404934993" duration="9523000" />
+      <workItem from="1569468501481" duration="993000" />
+      <workItem from="1569469548460" duration="2759000" />
+      <workItem from="1569477169161" duration="17615000" />
+      <workItem from="1569554675735" duration="2645000" />
+      <workItem from="1569559788611" duration="759000" />
+      <workItem from="1569560699548" duration="10138000" />
+      <workItem from="1569583801465" duration="863000" />
+      <workItem from="1569641288035" duration="8330000" />
+      <workItem from="1569660830743" duration="232000" />
+      <workItem from="1569665314201" duration="3539000" />
+      <workItem from="1569814101385" duration="21267000" />
+      <workItem from="1569900305847" duration="11141000" />
+      <workItem from="1570083185313" duration="8058000" />
+      <workItem from="1570104963196" duration="44000" />
+      <workItem from="1570435858719" duration="412000" />
+      <workItem from="1570609187037" duration="4479000" />
+      <workItem from="1570615708463" duration="921000" />
+      <workItem from="1570617357210" duration="3459000" />
+      <workItem from="1570679074123" duration="23568000" />
+      <workItem from="1570773478659" duration="1288000" />
+      <workItem from="1570775516132" duration="3043000" />
+      <workItem from="1570780846191" duration="8631000" />
+      <workItem from="1570794980175" duration="1294000" />
+      <workItem from="1570851380105" duration="5279000" />
+      <workItem from="1570868867477" duration="3064000" />
+      <workItem from="1571137258172" duration="632000" />
+      <workItem from="1571394656392" duration="440000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/booktap/wsgi.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
