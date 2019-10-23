@@ -1,3 +1,4 @@
+passlib
 certifi==2019.9.11
 chardet==3.0.4
 defusedxml==0.6.0

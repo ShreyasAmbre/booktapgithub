@@ -25,8 +25,8 @@ SECRET_KEY = '7i(tl3sd@hjg8rrp9=g%icn_*i^+(*@0hsg@cfpf+qbu@4y*+d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -98,18 +98,18 @@ WSGI_APPLICATION = 'booktap.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'booktap',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'booktap007',
-        # 'HOST': 'localhost'
-
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'defaultdatabase',
+        'NAME': 'booktap',
         'USER': 'postgres',
-        'PASSWORD': 'adminuser',
-        'HOST': 'defaultinstance.cduuab8jbebe.us-east-2.rds.amazonaws.com',
-        'PORT': '5432',
+        'PASSWORD': 'booktap007',
+        'HOST': 'localhost'
+
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'defaultdatabase',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'adminuser',
+        # 'HOST': 'defaultinstance.cduuab8jbebe.us-east-2.rds.amazonaws.com',
+        # 'PORT': '5432',
     }
 }
 
@@ -154,3 +154,7 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AUTHENTICATION_BACKENDS = (
+        'django.contrib.auth.backends.ModelBackend',
+    )

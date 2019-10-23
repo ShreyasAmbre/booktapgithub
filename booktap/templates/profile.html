@@ -5,14 +5,19 @@
     <title>Profile Page</title>
 </head>
 <body>
-    {% if user.is_authenticated %}
-        <h2>{{ Username }}</h2>
+{#    {% if user.is_authenticate%}#}
+{#        <h2>{{ Username }}</h2>#}
 {#        <li><a href="login/api/products">Products List API</a></li>#}
-        <p><a href="{% url 'login' %}">logout</a></p>
-    {% else %}
-        <p>You are not logged in</p>
+{#        <p><a href="{% url 'login' %}">login</a></p>#}
+{#    {% else %}#}
+{#        <p>You are not logged in</p>#}
 {#      <a href="{% url 'login' %}">login</a>#}
-    {% endif %}
+{#    {% endif %}#}
+
+    <h2>Profile Page</h2>
+    <li>User Is Logged IN</li>
+    <li>Data is :- {{ Serialized }}</li>
+    <li><a href="{% url 'login' %}">Logout</a></li>
 
 </body>
 </html>
