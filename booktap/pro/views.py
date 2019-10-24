@@ -7,7 +7,7 @@ from passlib.hash import pbkdf2_sha256
 
 # API Imports
 from pro.models import Signin
-from pro.serializers import SigninSerializer
+from pro.serializers import SigninSerializer, UserSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 
@@ -80,13 +80,13 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             try:
-                instance = Signin.objects.get(user=user)
+                instance = User.objects.get(username=username)
             except Signin.DoesNotExist:
                 return Response({'Errors': 'Object not found'}, status=404)
 
-            serialized = SigninSerializer(instance)
-            # return Response(serialized.data)
-            return render(request, 'profile.html', {'Serialized': serialized})
+            serialized = UserSerializer(instance)
+            return Response(serialized.data)
+            # return render(request, 'profile.html', {'Serialized': serialized})
         else:
             return render(request, 'login.html')
     return render(request, 'login.html')
