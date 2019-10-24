@@ -92,6 +92,12 @@ def login(request):
     return render(request, 'login.html')
 
 
-# def logout(request):
-#     auth.logout(request)
-#     return render(request, 'homepage.html')
+# API:- Login User Djnago Table API
+@api_view(['GET'])
+def loginapi(request):
+    if request.method == 'GET':
+        user_data = User.objects.all()
+        serializer = UserSerializer(user_data, many=True)
+        return Response(serializer.data)
+
+
