@@ -14,8 +14,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -34,16 +34,16 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FirstProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/customer" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/customer" />
       <recent name="$PROJECT_DIR$/offers" />
       <recent name="$PROJECT_DIR$/favourite" />
       <recent name="$PROJECT_DIR$/book" />
       <recent name="$PROJECT_DIR$/supplier" />
-      <recent name="$PROJECT_DIR$/customer" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -131,7 +131,16 @@
       <workItem from="1571627655534" duration="25434000" />
       <workItem from="1571716547798" duration="27430000" />
       <workItem from="1571804646206" duration="10105000" />
-      <workItem from="1571891148269" duration="2617000" />
+      <workItem from="1571891148269" duration="5265000" />
+      <workItem from="1571976715271" duration="2015000" />
+      <workItem from="1571993676102" duration="594000" />
+      <workItem from="1572875433215" duration="3304000" />
+      <workItem from="1572927024420" duration="13862000" />
+      <workItem from="1573010833987" duration="12000" />
+      <workItem from="1573011156469" duration="3711000" />
+      <workItem from="1573030772238" duration="3098000" />
+      <workItem from="1573097084262" duration="17802000" />
+      <workItem from="1573187772283" duration="22395000" />
     </task>
     <servers />
   </component>
@@ -158,6 +167,10 @@
           <url>file://$PROJECT_DIR$/booktap/wsgi.py</url>
           <line>9</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/customer/urls.py</url>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

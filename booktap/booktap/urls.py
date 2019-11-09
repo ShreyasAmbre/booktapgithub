@@ -18,11 +18,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls import static
 
+
 urlpatterns = [
     path('', include('homepage.urls')),
     path('admin/', admin.site.urls),
     path('pro/', include('pro.urls')),
     path('analysis/', include('analysis.urls')),
+    path('pro/login/customer/', include('customer.urls')),
+    # path('customer/', include('customer.urls')),
+
 
     # Urls for API
     path('api/', include('pro.api_urls')),

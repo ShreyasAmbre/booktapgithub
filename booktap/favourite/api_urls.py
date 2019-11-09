@@ -3,5 +3,7 @@ from favourite import views
 
 
 urlpatterns = [
-    path('wishlist/', views.wishlist, name='wishlist'),
+    path('getwishlist/', views.getwishlist, name='getwishlist'),
+    path('postwishlist/', views.postwishlist, name='postwishlist'),
+
 ]

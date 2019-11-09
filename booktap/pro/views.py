@@ -1,16 +1,15 @@
-from django.http import HttpResponse
+from django.contrib.auth.hashers import make_password
 from django.shortcuts import render
 from django.contrib.auth.models import User, auth
-from django.contrib.auth import authenticate, get_user_model
-from django.contrib.auth.models import Permission
-from passlib.hash import pbkdf2_sha256
 
 # API Imports
+from rest_framework import status
+
+from customer.serializers import CustomerReviewSerializer
 from pro.models import Signin
 from pro.serializers import SigninSerializer, UserSerializer
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes
-
+from rest_framework.decorators import api_view
 
 # API:- We get Data of All User only through API no need of login
 @api_view(['GET'])
@@ -46,28 +45,69 @@ def userlist(request):
     return render(request, 'profile.html')
 
 
+@api_view(['GET', 'POST'])
 def register(request):
+    # if request.method == 'POST':
+    #     username = request.POST.get('username', "")
+    #     firstname = request.POST.get('firstname', False)
+    #     lastname = request.POST.get('lastname', False)
+    #     email = request.POST.get('email', False)
+    #     contact = request.POST.get('email', False)
+    #     customer = request.POST.get('customer', False)
+    #     supplier = request.POST.get('supplier', False)
+    #     password1 = request.POST.get('password1', False)
+    #
+    #     user = User.objects.create_user(username=username, email=email, password=password1)
+    #     user.save()
+    #
+    #     userid = User.objects.get(username=username)
+    #     userprofile = Signin.objects.create(user=userid, first_name=firstname, last_name=lastname, contact=contact,
+    #                                         is_customer=customer, is_suppliers=supplier)
+    #     userprofile.save()
+    #
+    #     return render(request, 'profile.html')
+    # else:
+    #     return render(request, 'register.html')
+
     if request.method == 'POST':
         username = request.POST.get('username', "")
-        firstname = request.POST.get('firstname', False)
-        lastname = request.POST.get('lastname', False)
         email = request.POST.get('email', False)
-        contact = request.POST.get('email', False)
-        customer = request.POST.get('customer', False)
-        supplier = request.POST.get('supplier', False)
         password1 = request.POST.get('password1', False)
 
-        user = User.objects.create_user(username=username, email=email, password=password1)
-        user.save()
+        firstname = request.POST.get('firstname', False)
+        lastname = request.POST.get('lastname', False)
+        contact = request.POST.get('email', False)
+        # customer = request.POST.get('customer', False)
+        # supplier = request.POST.get('supplier', False)
+        userdata = {
+            'username': username,
+            'email': email,
+            'is_staff': True,
+            'is_superuser': True,
+            'password': make_password(password1),
+        }
 
-        userid = User.objects.get(username=username)
-        userprofile = Signin.objects.create(user=userid, first_name=firstname, last_name=lastname, contact=contact,
-                                            is_customer=customer, is_suppliers=supplier)
-        userprofile.save()
+        userserializer = UserSerializer(data=userdata)
 
-        return render(request, 'profile.html')
-    else:
-        return render(request, 'register.html')
+        if userserializer.is_valid():
+            userserializer.save()
+            userid = User.objects.get(username=username)
+            if userid:
+                id = userid.id
+                print(id)
+                userprofiledata = {
+                    'user': id,
+                    'first_name': firstname,
+                    'last_name': lastname,
+                    'contact': contact,
+                }
+                userprofileserializer = SigninSerializer(data=userprofiledata)
+                print(userprofileserializer)
+                if userprofileserializer.is_valid():
+                    userprofileserializer.save()
+                    return Response(userprofileserializer.data, status=status.HTTP_201_CREATED)
+                return Response(userprofileserializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    return render(request, 'register.html')
 
 
 @api_view(['GET', 'POST'])
@@ -78,15 +118,18 @@ def login(request):
 
         user = auth.authenticate(username=username, password=password)
         if user is not None:
-            auth.login(request, user)
-            try:
-                instance = User.objects.get(username=username)
-            except Signin.DoesNotExist:
-                return Response({'Errors': 'Object not found'}, status=404)
+            # auth.login(request, user)
+            # try:
+            #     instance = User.objects.get(username=username)
+            # except Signin.DoesNotExist:
+            #     return Response({'Errors': 'Object not found'}, status=404)
+            #
+            # serialized = UserSerializer(instance)
+            # return Response(serialized.data)
+            # # return render(request, 'profile.html', {'Serialized': serialized})
 
-            serialized = UserSerializer(instance)
-            return Response(serialized.data)
-            # return render(request, 'profile.html', {'Serialized': serialized})
+            userobj = User.objects.get(username=username)
+            return render(request, 'customer.html', {'USER': userobj})
         else:
             return render(request, 'login.html')
     return render(request, 'login.html')

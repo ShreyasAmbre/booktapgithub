@@ -18,3 +18,10 @@ class BookReviewRecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = BookReviewRecord
         fields = '__all__'
+
+
+class BookTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BookType
+        fields = '__all__'
+

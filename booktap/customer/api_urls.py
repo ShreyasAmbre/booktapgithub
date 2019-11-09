@@ -4,7 +4,10 @@ from customer import views
 
 urlpatterns = [
     path('customerorders/', views.customerorders, name='customerorders'),
-    path('customersearch/', views.customersearch, name='customersearch'),
-    path('customerreview/', views.customerreview, name='customerreview'),
 
+    path('getcustomersearch/', views.getcustomersearch, name='getcustomersearch'),
+    path('postcustomersearch/', views.postcustomersearch, name='postcustomersearch'),
+
+    path('getcustomerreview/', views.getcustomerreview, name='getcustomerreview'),
+    path('postcustomerreview/', views.postcustomerreview, name='postcustomerreview'),
 ]

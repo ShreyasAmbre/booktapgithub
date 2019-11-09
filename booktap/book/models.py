@@ -1,5 +1,7 @@
 from django.db import models
 from django.db import models
+from taggit.managers import TaggableManager
+
 from pro.models import Signin
 from supplier.models import SuppliersDetail
 
@@ -35,7 +37,6 @@ class EBook(models.Model):
     description = models.TextField()
     images = models.ImageField(upload_to='booksimages')
     book = models.FileField(upload_to='ebook')
-    price = models.IntegerField()
     edition = models.IntegerField()
     pages = models.IntegerField()
     language = models.CharField(max_length=50)
@@ -44,8 +45,17 @@ class EBook(models.Model):
     features = models.BooleanField(default=False)
     latest = models.BooleanField(default=False)
     best_seller = models.BooleanField(default=False)
+    original_price = models.IntegerField()
+    booktap_price = models.IntegerField()
+    tags = TaggableManager()
+    format = models.CharField(max_length=50)
+    file_size = models.FloatField()
+    isbn = models.CharField(max_length=50)
+    book_rated = models.IntegerField()
 
 
 class BookReviewRecord(models.Model):
     user_id = models.ForeignKey(Signin, on_delete=models.CASCADE)
+    ebook_id = models.ForeignKey(EBook, on_delete=models.CASCADE)
     reviews = models.TextField()
+    rating = models.IntegerField()

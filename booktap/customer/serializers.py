@@ -16,5 +16,5 @@ class CustomerSearchSerializer(serializers.ModelSerializer):
 
 class CustomerReviewSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CustomerSearch
+        model = CustomerReview
         fields = '__all__'

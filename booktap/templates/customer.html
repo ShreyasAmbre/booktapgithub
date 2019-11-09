@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+        color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h2>Customer Page</h2>
+    <h3>{{ USER }} Review</h3>
+    <form action="login/customer/postcustomerreview" method="post">
+        {% csrf_token %}
+
+        Customer Id :   <input type="text" name="userobj" value={{ USER.id }} readonly><br>
+        Review : <input type="text" name="review" placeholder="Enter Reviews">
+        <br>
+
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <br><br>
+
+        <input type="submit" value="Submit Review">
+    </form>
+</body>
+</html>

@@ -10,6 +10,6 @@ class Signin(models.Model):
     is_active = models.BooleanField(default=False)
     is_end_user = models.BooleanField(default=False)
     agree = models.BooleanField(default=False)
-    is_customer = models.BooleanField()
-    is_suppliers = models.BooleanField()
+    is_customer = models.BooleanField(default=True)
+
 

@@ -23,3 +23,4 @@ class CustomerReview(models.Model):
     user_id = models.ForeignKey(Signin, on_delete=models.CASCADE)
     book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
     reviews = models.TextField()
+    rating = models.IntegerField()
