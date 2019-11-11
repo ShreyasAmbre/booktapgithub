@@ -99,18 +99,18 @@ WSGI_APPLICATION = 'booktap.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'booktap',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'booktap007',
-        # 'HOST': 'localhost'
-
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'defaultdatabase',
+        'NAME': 'booktap',
         'USER': 'postgres',
-        'PASSWORD': 'adminuser',
-        'HOST': 'defaultinstance.cduuab8jbebe.us-east-2.rds.amazonaws.com',
-        'PORT': '5432',
+        'PASSWORD': 'booktap007',
+        'HOST': 'localhost'
+
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'defaultdatabase',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'adminuser',
+        # 'HOST': 'defaultinstance.cduuab8jbebe.us-east-2.rds.amazonaws.com',
+        # 'PORT': '5432',
     }
 }
 
