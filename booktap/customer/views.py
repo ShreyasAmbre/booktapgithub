@@ -10,7 +10,7 @@ from customer.serializers import *
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-# Create your views here.
+# Orders
 @api_view(['GET'])
 def customerorders(request):
     if request.method == 'GET':
@@ -39,7 +39,7 @@ def postcustomersearch(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
+# GET Revieww
 @api_view(['GET'])
 def getcustomerreview(request):
     if request.method == 'GET':
@@ -48,6 +48,7 @@ def getcustomerreview(request):
         return Response(serializer.data)
 
 
+# POST Review
 @api_view(['GET', 'POST'])
 def postcustomerreview(request):
     if request.method == 'POST':

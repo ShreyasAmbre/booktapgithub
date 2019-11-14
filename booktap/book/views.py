@@ -3,7 +3,6 @@ from django.http.response import Http404
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.views import APIView
-
 from book.serializers import *
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -48,25 +47,39 @@ def postbookreviewrecords(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# class bookreviewrecords(APIView):
-#
-#     def get(self, request, format=None):
-#         snippets = BookReviewRecord.objects.all()
-#         serializer = BookReviewRecordSerializer(snippets, many=True)
-#         return Response(serializer.data)
-#
-#     def post(self, request, format=None):
-#
-#         # userobj = User.objects.get(id=id)
-#         # ebookobj = Ebook.objects.get(id=id)
-#         data = {
-#             'user_id_id': 1,
-#             'ebook_id_id': 2,
-#             'reviews': "Done",
-#             'rating': 4,
-#         }
-#         serializer = BookReviewRecordSerializer(data=data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+def novelsebook(request):
+    if request.method == 'GET':
+        novel_ebooks = EBook.objects.filter(category_id=1)
+        serializer = EBookSerializer(novel_ebooks, many=True)
+        return Response(serializer.data)
+
+
+@api_view(['GET'])
+def adventureebook(request):
+    if request.method == 'GET':
+        novel_ebooks = EBook.objects.filter(category_id=2)
+        serializer = EBookSerializer(novel_ebooks, many=True)
+        return Response(serializer.data)
+
+
+@api_view(['GET'])
+def autobiographyebook(request):
+    if request.method == 'GET':
+        novel_ebooks = EBook.objects.filter(category_id=3)
+        serializer = EBookSerializer(novel_ebooks, many=True)
+        return Response(serializer.data)
+
+
+class EbookView(APIView):
+    def get_object(self, id):
+        try:
+            return EBook.objects.get(id=id)
+        except EBook.DoesNotExist:
+            return Response({'Error': 'Given Object Not Available'}, status=404)
+
+    def get(self, request, id=None):
+        instance = self.get_object(id)
+        serialized = EBookSerializer(instance)
+        return Response(serialized.data)
