@@ -3,6 +3,8 @@ from django.shortcuts import render
 # API Imports
 from rest_framework import status
 
+from book.models import EBook
+from book.serializers import BookReviewRecordSerializer
 from pro.models import Signin
 from customer.serializers import *
 from rest_framework.response import Response
@@ -50,19 +52,22 @@ def getcustomerreview(request):
 def postcustomerreview(request):
     if request.method == 'POST':
         user = request.POST.get('userobj', "")
-        # userobj = User.objects.get(username=user)
-        # print(userobj)
-        # print(type(userobj))
-        # name = request.POST.get('name', "")
         review = request.POST.get('review', "")
+        ratingint = request.POST.get('rating', "")
+        rating = int(ratingint)
+        print(type(rating), rating)
+
+        ebookobj = EBook.objects.get(name="Attitude")
+        ebookid = ebookobj.id
 
         data = {
             'user_id': user,
             'reviews': review,
-            'book_id': 5,
-            'rating': 1,
+            'book_id': ebookid,
+            'rating': rating,
         }
         serializer = CustomerReviewSerializer(data=data)
+        # bookserializer = BookReviewRecordSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)

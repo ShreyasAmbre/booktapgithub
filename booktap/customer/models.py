@@ -1,5 +1,6 @@
+from django.contrib.auth.models import User
 from django.db import models
-from book.models import Book
+from book.models import Book, EBook
 from pro.models import Signin
 from supplier.models import SuppliersDetail
 
@@ -20,7 +21,7 @@ class CustomerSearch(models.Model):
 
 
 class CustomerReview(models.Model):
-    user_id = models.ForeignKey(Signin, on_delete=models.CASCADE)
-    book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    book_id = models.ForeignKey(EBook, on_delete=models.CASCADE)
     reviews = models.TextField()
     rating = models.IntegerField()

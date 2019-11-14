@@ -129,6 +129,7 @@ def login(request):
             # # return render(request, 'profile.html', {'Serialized': serialized})
 
             userobj = User.objects.get(username=username)
+            print(type(userobj), userobj, ':- Printed from Pro views.py')
             return render(request, 'customer.html', {'USER': userobj})
         else:
             return render(request, 'login.html')

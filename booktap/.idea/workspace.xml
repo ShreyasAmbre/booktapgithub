@@ -34,6 +34,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/customer" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -142,7 +143,11 @@
       <workItem from="1573097084262" duration="17802000" />
       <workItem from="1573187772283" duration="22395000" />
       <workItem from="1573445142001" duration="2643000" />
-      <workItem from="1573449079297" duration="867000" />
+      <workItem from="1573449079297" duration="8753000" />
+      <workItem from="1573534633815" duration="7291000" />
+      <workItem from="1573546386238" duration="2879000" />
+      <workItem from="1573615565497" duration="7743000" />
+      <workItem from="1573701506289" duration="793000" />
     </task>
     <servers />
   </component>
