@@ -25,7 +25,7 @@ urlpatterns = [
     path('pro/', include('pro.urls')),
     path('analysis/', include('analysis.urls')),
     path('pro/login/customer/', include('customer.urls')),
-    # path('customer/', include('customer.urls')),
+    path('', include('supplier.urls')),
 
 
     # Urls for API

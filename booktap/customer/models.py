@@ -25,3 +25,4 @@ class CustomerReview(models.Model):
     book_id = models.ForeignKey(EBook, on_delete=models.CASCADE)
     reviews = models.TextField()
     rating = models.IntegerField()
+    date = models.DateTimeField(auto_now_add=True)

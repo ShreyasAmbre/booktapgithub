@@ -13,23 +13,22 @@
 <body>
     <h2>Customer Page</h2>
     <h3>{{ USER }} Review</h3>
+
+
     <form action="login/customer/postcustomerreview" method="post">
+
         {% csrf_token %}
 
         Customer Id :   <input type="number" name="userobj" value={{ USER.id }} readonly><br>
-        Review : <input type="text" name="review" placeholder="Enter Reviews">
-        <br>
-
+        Review : <input type="text" name="review" placeholder="Enter Reviews"><br>
         <span><input type="radio" name="rating" id="str5" value="1"></span>
         <span><input type="radio" name="rating" id="str3" value="2"></span>
         <span><input type="radio" name="rating" id="str2" value="3"></span>
         <span><input type="radio" name="rating" id="str1" value="4"></span>
-        <span><input type="radio" name="rating" id="str1" value="5"></span>
-
-
-        <br><br>
+        <span><input type="radio" name="rating" id="str1" value="5"></span><br><br>
 
         <input type="submit" value="Submit Review">
+
     </form>
 </body>
 </html>

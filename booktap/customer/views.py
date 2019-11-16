@@ -1,7 +1,11 @@
+from django.db.models import Q
+from django.utils import timezone
+
 from django.contrib.auth.models import User
 from django.shortcuts import render
 # API Imports
 from rest_framework import status
+from rest_framework.views import APIView
 
 from book.models import EBook
 from book.serializers import BookReviewRecordSerializer
@@ -9,6 +13,7 @@ from pro.models import Signin
 from customer.serializers import *
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+
 
 # Orders
 @api_view(['GET'])
@@ -39,11 +44,15 @@ def postcustomersearch(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# GET Revieww
+
+# GET All PAST Review of All EBOOKS
 @api_view(['GET'])
 def getcustomerreview(request):
     if request.method == 'GET':
-        user_data = CustomerReview.objects.all()
+        tnow = timezone.now()
+
+        print(tnow)
+        user_data = CustomerReview.objects.all().filter(date__lt=tnow).order_by('-date')
         serializer = CustomerReviewSerializer(user_data, many=True)
         return Response(serializer.data)
 
@@ -74,3 +83,23 @@ def postcustomerreview(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     return render(request, 'customer.html')
+
+
+# GET all REVIEWS of Particular EBOOK Only
+class SingleEBookCustomerReviewView(APIView):
+    def get_object(self, id):
+        try:
+            return EBook.objects.get(id=id)
+        except EBook.DoesNotExist:
+            return Response({'Error': 'Given Object Not Available'}, status=404)
+
+    def get(self, request, id=None):
+        instance = self.get_object(id)
+        id = instance.id
+        print(id)
+        tnow = timezone.now()
+        user_data = CustomerReview.objects.filter(Q(book_id=id) & Q(date__lte=tnow))
+        print(user_data)
+        serializer = CustomerReviewSerializer(user_data, many=True)
+        return Response(serializer.data)
+        # return render(request, 'success.html')
