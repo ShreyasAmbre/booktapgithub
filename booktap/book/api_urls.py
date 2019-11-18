@@ -11,5 +11,6 @@ urlpatterns = [
     path('adventureebook/', views.adventureebook, name='adventureebook'),
     path('autobiographyebook/', views.autobiographyebook, name='autobiographyebook'),
     path('EbookView/<int:id>/', EbookView.as_view()),
+
 ]
 

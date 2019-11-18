@@ -23,14 +23,14 @@ def suppliersrecords(request):
         return Response(serializer.data)
 
 
-class Profile(APIView):
-    def get_object(self, username):
-        try:
-            return User.objects.get(username=username)
-        except User.DoesNotExist:
-            return Response({'Error': 'Given Object Not Available'}, status=404)
-
-    def get(self, request, username=None):
-        instance = self.get_object(username)
-        print(instance)
-        return render(request, 'supplierprofile.html')
+# class Profile(APIView):
+#     def get_object(self, username):
+#         try:
+#             return User.objects.get(username=username)
+#         except User.DoesNotExist:
+#             return Response({'Error': 'Given Object Not Available'}, status=404)
+#
+#     def get(self, request, username=None):
+#         instance = self.get_object(username)
+#         print(instance)
+#         return render(request, 'supplierprofile.html')

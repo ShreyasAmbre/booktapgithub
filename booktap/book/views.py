@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from book.serializers import *
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from taggit.models import Tag
 
 # Create your views here.
 @api_view(['GET'])
@@ -19,8 +20,8 @@ def book(request):
 @api_view(['GET'])
 def ebook(request):
     if request.method == 'GET':
-        user_data = Book.objects.all()
-        serializer = BookSerializer(user_data, many=True)
+        user_data = EBook.objects.all()
+        serializer = EBookSerializer(user_data, many=True)
         return Response(serializer.data)
 
 
@@ -83,3 +84,4 @@ class EbookView(APIView):
         instance = self.get_object(id)
         serialized = EBookSerializer(instance)
         return Response(serialized.data)
+
