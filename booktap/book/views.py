@@ -84,29 +84,43 @@ class EbookView(APIView):
         serialized = EBookSerializer(instance)
         return Response(serialized.data)
 
+# Below code is for Search Ebook which fetch the data using Tags ID
+# class Search(APIView):
+#     def get_object(self, id):
+#         try:
+#             return TaggedItem.objects.filter(tag_id=id)
+#         except TaggedItem.DoesNotExist:
+#             return Response({'Error': 'Given Object Not Available'}, status=404)
+#
+#     def get(self, request, id=None):
+#         instanceobj = self.get_object(id)
+#         print(type(instanceobj), instanceobj)
+#
+#
+#         # for i in instanceobj:
+#         #     # ebookid = []
+#         #     # ebookid.append(i.object_id)
+#         #     # print(ebookid)
+#         #     ebookid = i.object_id
+#         #     ebookobj = EBook.objects.get(id=ebookid)
+#         #     data = []
+#         #     data.append(i.object_id)
+#         #     # print(type(ebookobj), ebookobj)
+#         #     print(data)
+#
+#         return render(request, 'success.html', {'Ebookobj': instanceobj})
+#         # return Response(serialized.data)
 
-class Search(APIView):
-    def get_object(self, id):
-        try:
-            return TaggedItem.objects.filter(tag_id=id)
-        except TaggedItem.DoesNotExist:
-            return Response({'Error': 'Given Object Not Available'}, status=404)
 
-    def get(self, request, id=None):
-        instanceobj = self.get_object(id)
-        print(type(instanceobj), instanceobj)
-
-
-        # for i in instanceobj:
-        #     # ebookid = []
-        #     # ebookid.append(i.object_id)
-        #     # print(ebookid)
-        #     ebookid = i.object_id
-        #     ebookobj = EBook.objects.get(id=ebookid)
-        #     data = []
-        #     data.append(i.object_id)
-        #     # print(type(ebookobj), ebookobj)
-        #     print(data)
-
-        return render(request, 'success.html')
-        # return Response(serialized.data)
+# Below code is for Search Ebook which fetch the data using Tags NAME
+def searchfn(request, name):
+    global id
+    if request.method == 'GET':
+        tagname = Tag.objects.filter(name=name)
+        # id = tagname.id
+        for i in tagname:
+            id = i.id
+        print(id)
+        taggeditem = TaggedItem.objects.filter(tag_id=id)
+        print(taggeditem)
+        return render(request, 'success.html', {'TaggedItem': taggeditem} )
