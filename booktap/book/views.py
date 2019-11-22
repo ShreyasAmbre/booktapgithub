@@ -113,6 +113,7 @@ class EbookView(APIView):
 
 
 # Below code is for Search Ebook which fetch the data using Tags NAME
+@api_view(['GET'])
 def searchfn(request, name):
     global id
     if request.method == 'GET':
@@ -122,5 +123,6 @@ def searchfn(request, name):
             id = i.id
         print(id)
         taggeditem = TaggedItem.objects.filter(tag_id=id)
-        print(taggeditem)
-        return render(request, 'success.html')
+        serializer = TaggedItemSerializer(taggeditem, many=True)
+        # print(taggeditem)
+        return Response(serializer.data)

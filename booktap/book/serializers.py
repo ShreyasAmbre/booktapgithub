@@ -1,4 +1,6 @@
 from rest_framework import serializers
+from taggit.models import TaggedItem
+
 from book.models import *
 
 
@@ -25,3 +27,8 @@ class BookTypeSerializer(serializers.ModelSerializer):
         model = BookType
         fields = '__all__'
 
+
+class TaggedItemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TaggedItem
+        fields = '__all__'
