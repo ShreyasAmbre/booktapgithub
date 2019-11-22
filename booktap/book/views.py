@@ -123,4 +123,4 @@ def searchfn(request, name):
         print(id)
         taggeditem = TaggedItem.objects.filter(tag_id=id)
         print(taggeditem)
-        return render(request, 'success.html', {'TaggedItem': taggeditem} )
+        return render(request, 'success.html')
