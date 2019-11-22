@@ -1,12 +1,11 @@
-from django.contrib.auth.models import User
-from django.http.response import Http404
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.views import APIView
 from book.serializers import *
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from taggit.models import Tag
+from taggit.models import Tag, TaggedItem
+
 
 # Create your views here.
 @api_view(['GET'])
@@ -85,3 +84,29 @@ class EbookView(APIView):
         serialized = EBookSerializer(instance)
         return Response(serialized.data)
 
+
+class Search(APIView):
+    def get_object(self, id):
+        try:
+            return TaggedItem.objects.filter(tag_id=id)
+        except TaggedItem.DoesNotExist:
+            return Response({'Error': 'Given Object Not Available'}, status=404)
+
+    def get(self, request, id=None):
+        instanceobj = self.get_object(id)
+        print(type(instanceobj), instanceobj)
+
+
+        # for i in instanceobj:
+        #     # ebookid = []
+        #     # ebookid.append(i.object_id)
+        #     # print(ebookid)
+        #     ebookid = i.object_id
+        #     ebookobj = EBook.objects.get(id=ebookid)
+        #     data = []
+        #     data.append(i.object_id)
+        #     # print(type(ebookobj), ebookobj)
+        #     print(data)
+
+        return render(request, 'success.html')
+        # return Response(serialized.data)
