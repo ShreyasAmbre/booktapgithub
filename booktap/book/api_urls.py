@@ -1,6 +1,7 @@
 from django.urls import path
 from book import views
 from book.views import EbookView
+
 # from book.views import Search
 urlpatterns = [
     path('book/', views.book, name='book'),
@@ -14,5 +15,6 @@ urlpatterns = [
     path('EbookView/<int:id>/', EbookView.as_view()),
     path('searchfn/<str:name>/', views.searchfn, name='searchfn'),
     # path('search/<int:id>/', views.search, name='search'),
+    path('ratedfn/<int:id>', views.ratedfn, name='ratedfn'),
 ]
 

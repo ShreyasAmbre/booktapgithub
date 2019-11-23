@@ -61,24 +61,24 @@ def getcustomerreview(request):
 @api_view(['GET', 'POST'])
 def postcustomerreview(request):
     if request.method == 'POST':
-        # user = request.POST.get('userobj', "")
-        # review = request.POST.get('review', "")
-        # ratingint = request.POST.get('rating', "")
-        # rating = int(ratingint)
-        # # print(type(rating), rating)
-        #
-        # ebookobj = EBook.objects.get(name="Attitude")
-        # ebookid = ebookobj.id
-        # # name = user.username
-        # # print(type(user), name)
-        #
-        # data = {
-        #     'user_id': user,
-        #     'reviews': review,
-        #     'book_id': ebookid,
-        #     'rating': rating,
-        # }
-        serializer = CustomerReviewSerializer(data=request.data)
+        user = request.POST.get('userobj', "")
+        review = request.POST.get('review', "")
+        ratingint = request.POST.get('rating', "")
+        rating = int(ratingint)
+        # print(type(rating), rating)
+
+        ebookobj = EBook.objects.get(name="Attitude")
+        ebookid = ebookobj.id
+        # name = user.username
+        # print(type(user), name)
+
+        data = {
+            'user_id': user,
+            'reviews': review,
+            'book_id': ebookid,
+            'rating': rating,
+        }
+        serializer = CustomerReviewSerializer(data=data)
         # bookserializer = BookReviewRecordSerializer(data=data)
         if serializer.is_valid():
             serializer.save()

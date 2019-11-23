@@ -8,6 +8,9 @@ from taggit.models import Tag, TaggedItem
 
 
 # Create your views here.
+from customer.models import CustomerReview
+
+
 @api_view(['GET'])
 def book(request):
     if request.method == 'GET':
@@ -113,6 +116,7 @@ class EbookView(APIView):
 
 
 # Below code is for Search Ebook which fetch the data using Tags NAME
+
 @api_view(['GET'])
 def searchfn(request, name):
     global id
@@ -126,3 +130,30 @@ def searchfn(request, name):
         serializer = TaggedItemSerializer(taggeditem, many=True)
         # print(taggeditem)
         return Response(serializer.data)
+
+
+def ratedfn(request, id):
+    global rating, res, value
+    customerratings = CustomerReview.objects.filter(book_id=id)
+    # print(customerratings)
+
+    arr = []
+    for i in customerratings:
+        rating = i.rating
+        arr.append(rating)
+        sumdata = sum(arr)
+        customercount = len(arr)
+        totalratings = customercount * 5
+        value = sumdata / totalratings
+        res = value * 5
+    print("Login Result", res)
+    ebookobj = EBook.objects.get(id=id)
+    ebookratingcolumvalue = ebookobj.book_rated
+    print("Before Value", ebookratingcolumvalue)
+    ebookobj.book_rated = res
+    ebookobj.save()
+
+    updatedebookobj = EBook.objects.get(id=id)
+    updatedrattingvalue = updatedebookobj.book_rated
+    print("Updated Value", updatedrattingvalue)
+    return render(request, 'success.html')

@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'phone_field',
     'taggit',
+    'corsheaders',
 
 ]
 REST_FRAMEWORK = {
@@ -64,6 +65,10 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -71,6 +76,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'booktap.urls'
@@ -99,18 +106,18 @@ WSGI_APPLICATION = 'booktap.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'booktap',
-        'USER': 'postgres',
-        'PASSWORD': 'booktap007',
-        'HOST': 'localhost'
-
         # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'test',
+        # 'NAME': 'booktap',
         # 'USER': 'postgres',
-        # 'PASSWORD': 'Nn8Rdls0XYBy',
-        # 'HOST': '164.52.192.71',
-        # # 'PORT': '5432',
+        # 'PASSWORD': 'booktap007',
+        # 'HOST': 'localhost'
+
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'test',
+        'USER': 'postgres',
+        'PASSWORD': 'Nn8Rdls0XYBy',
+        'HOST': '164.52.192.71',
+        # 'PORT': '5432',
     }
 }
 
