@@ -51,7 +51,7 @@ class EBook(models.Model):
     format = models.CharField(max_length=50)
     file_size = models.FloatField()
     isbn = models.CharField(max_length=50)
-    book_rated = models.IntegerField()
+    book_rated = models.FloatField()
 
 
 class BookReviewRecord(models.Model):

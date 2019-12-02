@@ -83,6 +83,16 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_HEADERS = (
+        'content-disposition',
+        'accept-encoding',
+        'content-type',
+        'accept',
+        'origin',
+        'authorization',
+        'cache-control',
+        'x-requested-with',
+        )
 
 ROOT_URLCONF = 'booktap.urls'
 

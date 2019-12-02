@@ -135,6 +135,7 @@ def searchfn(request, name):
 def ratedfn(request, id):
     global rating, res, value
     customerratings = CustomerReview.objects.filter(book_id=id)
+
     # print(customerratings)
 
     arr = []
@@ -146,14 +147,18 @@ def ratedfn(request, id):
         totalratings = customercount * 5
         value = sumdata / totalratings
         res = value * 5
-    print("Login Result", res)
+    print("Result", res)
+
     ebookobj = EBook.objects.get(id=id)
     ebookratingcolumvalue = ebookobj.book_rated
     print("Before Value", ebookratingcolumvalue)
+
     ebookobj.book_rated = res
+    print(ebookobj.book_rated)
     ebookobj.save()
 
     updatedebookobj = EBook.objects.get(id=id)
     updatedrattingvalue = updatedebookobj.book_rated
     print("Updated Value", updatedrattingvalue)
+
     return render(request, 'success.html')

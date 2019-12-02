@@ -32,13 +32,13 @@ def getcustomersearch(request):
         return Response(serializer.data)
 
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def postcustomersearch(request):
-    if request.method == 'GET':
-        data = {
-            'customer_search': "Jhone Coner Search",
-        }
-        serializer = CustomerSearchSerializer(data=data)
+    if request.method == 'POST':
+        # data = {
+        #     'customer_search': "Jhone Coner Search",
+        # }
+        serializer = CustomerSearchSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -61,24 +61,24 @@ def getcustomerreview(request):
 @api_view(['GET', 'POST'])
 def postcustomerreview(request):
     if request.method == 'POST':
-        user = request.POST.get('userobj', "")
-        review = request.POST.get('review', "")
-        ratingint = request.POST.get('rating', "")
-        rating = int(ratingint)
-        # print(type(rating), rating)
-
-        ebookobj = EBook.objects.get(name="Attitude")
-        ebookid = ebookobj.id
-        # name = user.username
-        # print(type(user), name)
-
-        data = {
-            'user_id': user,
-            'reviews': review,
-            'book_id': ebookid,
-            'rating': rating,
-        }
-        serializer = CustomerReviewSerializer(data=data)
+        # user = request.POST.get('userobj', "")
+        # review = request.POST.get('review', "")
+        # ratingint = request.POST.get('rating', "")
+        # rating = int(ratingint)
+        # # print(type(rating), rating)
+        #
+        # ebookobj = EBook.objects.get(name="Attitude")
+        # ebookid = ebookobj.id
+        # # name = user.username
+        # # print(type(user), name)
+        #
+        # data = {
+        #     'user_id': user,
+        #     'reviews': review,
+        #     'book_id': ebookid,
+        #     'rating': rating,
+        # }
+        serializer = CustomerReviewSerializer(data=request.data)
         # bookserializer = BookReviewRecordSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
