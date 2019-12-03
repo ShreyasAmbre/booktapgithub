@@ -9,6 +9,6 @@ urlpatterns = [
     path('postcustomersearch/', views.postcustomersearch, name='postcustomersearch'),
 
     path('getcustomerreview/', views.getcustomerreview, name='getcustomerreview'),
-    # path('postcustomerreview/', views.postcustomerreview, name='postcustomerreview'),
+    path('postcustomerreview/', views.postcustomerreview, name='postcustomerreview'),
     path('SingleEBookCustomerReviewView/<int:id>/', SingleEBookCustomerReviewView.as_view()),
 ]
