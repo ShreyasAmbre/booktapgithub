@@ -70,38 +70,39 @@ def register(request):
     #     return render(request, 'register.html')
 
     if request.method == 'POST':
-        username = request.POST.get('username', "")
-        email = request.POST.get('email', False)
-        password1 = request.POST.get('password1', False)
+        # username = request.POST.get('username', "")
+        # email = request.POST.get('email', False)
+        # password1 = request.POST.get('password1', False)
+        #
+        # firstname = request.POST.get('firstname', False)
+        # lastname = request.POST.get('lastname', False)
+        # contact = request.POST.get('email', False)
+        # # customer = request.POST.get('customer', False)
+        # # supplier = request.POST.get('supplier', False)
+        # userdata = {
+        #     'username': username,
+        #     'email': email,
+        #     'is_staff': True,
+        #     'is_superuser': True,
+        #     'password': make_password(password1),
+        # }
 
-        firstname = request.POST.get('firstname', False)
-        lastname = request.POST.get('lastname', False)
-        contact = request.POST.get('email', False)
-        # customer = request.POST.get('customer', False)
-        # supplier = request.POST.get('supplier', False)
-        userdata = {
-            'username': username,
-            'email': email,
-            'is_staff': True,
-            'is_superuser': True,
-            'password': make_password(password1),
-        }
-
-        userserializer = UserSerializer(data=userdata)
+        userserializer = UserSerializer(data=request.data)
 
         if userserializer.is_valid():
             userserializer.save()
-            userid = User.objects.get(username=username)
+            userid = User.objects.get(username=request.data.username)
+            print(userid, type(userid))
             if userid:
-                id = userid.id
-                print(id)
-                userprofiledata = {
-                    'user': id,
-                    'first_name': firstname,
-                    'last_name': lastname,
-                    'contact': contact,
-                }
-                userprofileserializer = SigninSerializer(data=userprofiledata)
+                # id = userid.id
+                # print(id)
+                # userprofiledata = {
+                #     'user': id,
+                #     'first_name': firstname,
+                #     'last_name': lastname,
+                #     'contact': contact,
+                # }
+                userprofileserializer = SigninSerializer(data=request.data)
                 print(userprofileserializer)
                 if userprofileserializer.is_valid():
                     userprofileserializer.save()

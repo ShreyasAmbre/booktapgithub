@@ -79,6 +79,7 @@ def postcustomerreview(request):
         #     'rating': rating,
         # }
         serializer = CustomerReviewSerializer(data=request.data)
+
         # bookserializer = BookReviewRecordSerializer(data=data)
         if serializer.is_valid():
             serializer.save()

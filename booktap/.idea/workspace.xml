@@ -42,7 +42,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/customer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../welut" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -196,7 +196,7 @@
       <workItem from="1574836199930" duration="5658000" />
       <workItem from="1575259244562" duration="4276000" />
       <workItem from="1575264987904" duration="1697000" />
-      <workItem from="1575347444060" duration="1429000" />
+      <workItem from="1575347444060" duration="4359000" />
     </task>
     <servers />
   </component>
@@ -217,10 +217,18 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="497" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575351025869">
+      <screen x="63" y="27" width="1303" height="741" />
+    </state>
+    <state x="497" y="154" width="424" height="484" key="FileChooserDialogImpl/63.27.1303.741@63.27.1303.741" timestamp="1575351025869" />
     <state x="370" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1575347516166">
       <screen x="63" y="27" width="1303" height="741" />
     </state>
     <state x="370" y="224" key="com.intellij.ide.util.TipDialog/63.27.1303.741@63.27.1303.741" timestamp="1575347516166" />
+    <state x="535" y="251" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1575353427680">
+      <screen x="63" y="27" width="1303" height="741" />
+    </state>
+    <state x="535" y="251" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup/63.27.1303.741@63.27.1303.741" timestamp="1575353427680" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
