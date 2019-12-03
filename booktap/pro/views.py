@@ -88,26 +88,10 @@ def register(request):
         # }
 
         userserializer = UserSerializer(data=request.data)
-
         if userserializer.is_valid():
             userserializer.save()
-            userid = User.objects.get(username=request.data.username)
-            print(userid, type(userid))
-            if userid:
-                # id = userid.id
-                # print(id)
-                # userprofiledata = {
-                #     'user': id,
-                #     'first_name': firstname,
-                #     'last_name': lastname,
-                #     'contact': contact,
-                # }
-                userprofileserializer = SigninSerializer(data=request.data)
-                print(userprofileserializer)
-                if userprofileserializer.is_valid():
-                    userprofileserializer.save()
-                    return Response(userprofileserializer.data, status=status.HTTP_201_CREATED)
-                return Response(userprofileserializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(userserializer.data, status=status.HTTP_201_CREATED)
+        return Response(userserializer.errors, status=status.HTTP_400_BAD_REQUEST)
     return render(request, 'register.html')
 
 

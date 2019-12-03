@@ -30,6 +30,11 @@
       </set>
     </option>
   </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
   <component name="ProjectId" id="1R5GU1iP9pZalsUoituLj1e2e02" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -196,7 +201,7 @@
       <workItem from="1574836199930" duration="5658000" />
       <workItem from="1575259244562" duration="4276000" />
       <workItem from="1575264987904" duration="1697000" />
-      <workItem from="1575347444060" duration="4359000" />
+      <workItem from="1575347444060" duration="7002000" />
     </task>
     <servers />
   </component>
