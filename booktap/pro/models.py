@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Signin(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.CharField(max_length=30, blank=True)
     first_name = models.CharField(max_length=30, blank=True)
     last_name = models.CharField(max_length=30, blank=True)
     contact = models.CharField(max_length=20)
