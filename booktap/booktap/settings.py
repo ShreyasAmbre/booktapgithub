@@ -34,9 +34,9 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'ElectronicBook.apps.ElectronicbookConfig',
     'customer.apps.CustomerConfig',
     'supplier.apps.SupplierConfig',
-    'book.apps.BookConfig',
     'analysis.apps.AnalysisConfig',
     'pro.apps.ProConfig',
     'offers.apps.OffersConfig',

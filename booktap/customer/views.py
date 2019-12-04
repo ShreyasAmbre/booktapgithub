@@ -7,8 +7,8 @@ from django.shortcuts import render
 from rest_framework import status
 from rest_framework.views import APIView
 
-from book.models import EBook
-from book.serializers import BookReviewRecordSerializer
+from ElectronicBook.models import ElectronicBook
+from ElectronicBook.serializers import BookReviewRecordSerializer
 from pro.models import Signin
 from customer.serializers import *
 from rest_framework.response import Response
@@ -92,8 +92,8 @@ def postcustomerreview(request):
 class SingleEBookCustomerReviewView(APIView):
     def get_object(self, id):
         try:
-            return EBook.objects.get(id=id)
-        except EBook.DoesNotExist:
+            return ElectronicBook.objects.get(id=id)
+        except ElectronicBook.DoesNotExist:
             return Response({'Error': 'Given Object Not Available'}, status=404)
 
     def get(self, request, id=None):

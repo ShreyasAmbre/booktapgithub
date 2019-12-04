@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
-from book.models import Book
+from ElectronicBook.models import Book
 from customer.models import CustomerOrders
 from pro.models import Signin
 

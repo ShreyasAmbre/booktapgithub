@@ -1,5 +1,5 @@
 from django.db import models
-from book.models import Book
+from ElectronicBook.models import Book
 from pro.models import Signin
 
 

@@ -32,7 +32,7 @@ urlpatterns = [
     path('api/', include('pro.api_urls')),
     path('api/', include('customer.api_urls')),
     path('api/', include('supplier.api_urls')),
-    path('api/', include('book.api_urls')),
+    path('api/', include('ElectronicBook.api_urls')),
     path('api/', include('offers.api_urls')),
     path('api/', include('favourite.api_urls')),
 
