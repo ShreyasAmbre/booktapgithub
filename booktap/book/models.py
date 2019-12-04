@@ -9,7 +9,6 @@ from supplier.models import SuppliersDetail
 class BookType(models.Model):
     category_name = models.CharField(max_length=50)
 
-
 class Book(models.Model):
     suppliers_id = models.ForeignKey(SuppliersDetail, on_delete=models.CASCADE)
     category_id = models.ForeignKey(BookType, on_delete=models.CASCADE)

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f1260ab-dffa-4b7a-aaa8-ecb1bc839e11" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/booktap/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktap/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/booktap/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/booktap/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +48,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../welut" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../welut/welut_demo" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -201,7 +202,10 @@
       <workItem from="1574836199930" duration="5658000" />
       <workItem from="1575259244562" duration="4276000" />
       <workItem from="1575264987904" duration="1697000" />
-      <workItem from="1575347444060" duration="8383000" />
+      <workItem from="1575347444060" duration="11406000" />
+      <workItem from="1575363668779" duration="1718000" />
+      <workItem from="1575367420885" duration="710000" />
+      <workItem from="1575431021582" duration="3255000" />
     </task>
     <servers />
   </component>
@@ -222,14 +226,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="497" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575351025869">
+    <state x="497" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575366420785">
       <screen x="63" y="27" width="1303" height="741" />
     </state>
-    <state x="497" y="154" width="424" height="484" key="FileChooserDialogImpl/63.27.1303.741@63.27.1303.741" timestamp="1575351025869" />
-    <state x="370" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1575347516166">
+    <state x="497" y="154" width="424" height="484" key="FileChooserDialogImpl/63.27.1303.741@63.27.1303.741" timestamp="1575366420785" />
+    <state x="370" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1575431069253">
       <screen x="63" y="27" width="1303" height="741" />
     </state>
-    <state x="370" y="224" key="com.intellij.ide.util.TipDialog/63.27.1303.741@63.27.1303.741" timestamp="1575347516166" />
+    <state x="370" y="224" key="com.intellij.ide.util.TipDialog/63.27.1303.741@63.27.1303.741" timestamp="1575431069253" />
     <state x="535" y="251" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1575353427680">
       <screen x="63" y="27" width="1303" height="741" />
     </state>
