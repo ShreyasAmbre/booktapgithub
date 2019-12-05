@@ -13,6 +13,7 @@ urlpatterns = [
     path('adventureebook/', views.adventureebook, name='adventureebook'),
     path('autobiographyebook/', views.autobiographyebook, name='autobiographyebook'),
     path('bestsellerebook/', views.bestsellerebook, name='bestsellerebook'),
+    path('latestebook/', views.latestebook, name='latestebook'),
     path('EbookView/<int:id>/', EbookView.as_view()),
     path('searchfn/<str:name>/', views.searchfn, name='searchfn'),
     # path('search/<int:id>/', views.search, name='search'),

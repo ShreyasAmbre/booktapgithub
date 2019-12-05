@@ -81,6 +81,14 @@ def bestsellerebook(request):
         return Response(serializer.data)
 
 
+@api_view(['GET'])
+def latestebook(request):
+    if request.method == 'GET':
+        bestseller_ebooks = ElectronicBook.objects.filter(latest=True)
+        serializer = EBookSerializer(bestseller_ebooks, many=True)
+        return Response(serializer.data)
+
+
 class EbookView(APIView):
     def get_object(self, id):
         try:
