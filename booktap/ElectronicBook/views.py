@@ -116,7 +116,7 @@ class EbookView(APIView):
 
 @api_view(['GET'])
 def searchfn(request, name):
-    global id
+    global id, EbookData
     if request.method == 'GET':
         tagname = Tag.objects.filter(name=name)
         # id = tagname.id
@@ -124,8 +124,27 @@ def searchfn(request, name):
             id = i.id
         print(id)
         taggeditem = TaggedItem.objects.filter(tag_id=id)
-        serializer = TaggedItemSerializer(taggeditem, many=True)
-        # print(taggeditem)
+        print(taggeditem)
+
+        arr = []
+        objarr = []
+        for i in taggeditem:
+            data = i.object_id
+            # print(data)
+            arr.append(data)
+            # print(arr)
+            for j in arr:
+                val = j
+                EbookData = ElectronicBook.objects.filter(id=val)
+                # print(EbookData)
+                # objarr.append(EbookData)
+                # print(objarr)
+                # for k in EbookData:
+                #     author = k.author
+                #     print("Author Name is ", author)
+
+        serializer = EBookSerializer(EbookData, many=True)
+        # return render(request, 'success.html')
         return Response(serializer.data)
 
 
