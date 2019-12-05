@@ -73,6 +73,14 @@ def autobiographyebook(request):
         return Response(serializer.data)
 
 
+@api_view(['GET'])
+def bestsellerebook(request):
+    if request.method == 'GET':
+        bestseller_ebooks = ElectronicBook.objects.filter(best_seller=True)
+        serializer = EBookSerializer(bestseller_ebooks, many=True)
+        return Response(serializer.data)
+
+
 class EbookView(APIView):
     def get_object(self, id):
         try:

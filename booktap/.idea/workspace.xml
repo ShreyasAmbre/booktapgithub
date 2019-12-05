@@ -48,7 +48,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ElectronicBook" />
+    <property name="last_opened_file_path" value="$USER_HOME$/pythoncode" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -206,6 +206,11 @@
       <workItem from="1575363668779" duration="1718000" />
       <workItem from="1575367420885" duration="710000" />
       <workItem from="1575431021582" duration="27054000" />
+      <workItem from="1575515979242" duration="602000" />
+      <workItem from="1575523238930" duration="1085000" />
+      <workItem from="1575525520294" duration="2236000" />
+      <workItem from="1575529488573" duration="642000" />
+      <workItem from="1575532620640" duration="999000" />
     </task>
     <servers />
   </component>
@@ -226,14 +231,18 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="497" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575366420785">
+    <state x="497" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1575532677759">
       <screen x="63" y="27" width="1303" height="741" />
     </state>
-    <state x="497" y="154" width="424" height="484" key="FileChooserDialogImpl/63.27.1303.741@63.27.1303.741" timestamp="1575366420785" />
-    <state x="370" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1575515981196">
+    <state x="497" y="154" width="424" height="484" key="FileChooserDialogImpl/63.27.1303.741@63.27.1303.741" timestamp="1575532677759" />
+    <state x="203" y="31" key="SettingsEditor" timestamp="1575532669201">
       <screen x="63" y="27" width="1303" height="741" />
     </state>
-    <state x="370" y="224" key="com.intellij.ide.util.TipDialog/63.27.1303.741@63.27.1303.741" timestamp="1575515981196" />
+    <state x="203" y="31" key="SettingsEditor/63.27.1303.741@63.27.1303.741" timestamp="1575532669201" />
+    <state x="370" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1575532626906">
+      <screen x="63" y="27" width="1303" height="741" />
+    </state>
+    <state x="370" y="224" key="com.intellij.ide.util.TipDialog/63.27.1303.741@63.27.1303.741" timestamp="1575532626906" />
     <state x="535" y="251" width="250" height="278" key="jetbrains.javascript.buildTools.run-task-popup" timestamp="1575353427680">
       <screen x="63" y="27" width="1303" height="741" />
     </state>
