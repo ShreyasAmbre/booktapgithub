@@ -1,5 +1,6 @@
+from django.contrib.postgres.search import SearchVector
 from django.shortcuts import render
-from rest_framework import status
+from rest_framework import status, generics
 from rest_framework.views import APIView
 from ElectronicBook.serializers import *
 from rest_framework.response import Response
@@ -188,6 +189,28 @@ def ratedfn(request, id):
     updatedrattingvalue = updatedebookobj.book_rated
     print("Updated Value", updatedrattingvalue)
     return render(request, 'success.html')
+
+
+class EbookSearchList(generics.ListAPIView):
+    serializer_class = EBookSerializer
+
+    # def get_queryset(self):
+    #     queryset = VideoBook.objects.all()
+    #     name = self.request.query_params.get('name', None)
+    #     print(name)
+    #     if name is not None:
+    #         queryset = queryset.filter(name=name)
+    #         print("*****************************")
+    #     return queryset
+
+    def get_queryset(self):
+        """
+        This view should return a list of all the purchases for
+        the user as determined by the username portion of the URL.
+        """
+        name = self.kwargs['name']
+        queryset = ElectronicBook.objects.annotate(search=SearchVector('name', 'description'),).filter(search=name)
+        return queryset
 
 
 
