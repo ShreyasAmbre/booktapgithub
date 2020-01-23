@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pro/', include('pro.urls')),
     path('analysis/', include('analysis.urls')),
+    path('videobook/', include('VideoBook.urls')),
     # path('pro/login/customer/', include('customer.urls')),
     # path('', include('supplier.urls')),
 
@@ -36,6 +37,7 @@ urlpatterns = [
     path('api/', include('ElectronicBook.api_urls')),
     path('api/', include('offers.api_urls')),
     path('api/', include('favourite.api_urls')),
+    path('api/', include('VideoBook.api_urls')),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -188,3 +188,6 @@ def ratedfn(request, id):
     updatedrattingvalue = updatedebookobj.book_rated
     print("Updated Value", updatedrattingvalue)
     return render(request, 'success.html')
+
+
+

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'pro.apps.ProConfig',
     'offers.apps.OffersConfig',
     'favourite.apps.FavouriteConfig',
+    'VideoBook.apps.VideobookConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,18 +121,18 @@ WSGI_APPLICATION = 'booktap.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'booktap',
-        # 'USER': 'postgres',
-        # 'PASSWORD': 'booktap007',
-        # 'HOST': 'localhost'
-
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'booktap',
         'USER': 'postgres',
-        'PASSWORD': 'Nn8Rdls0XYBy',
-        'HOST': '164.52.192.71',
-        # 'PORT': '5432',
+        'PASSWORD': 'booktap007',
+        'HOST': 'localhost'
+
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'booktap',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'Nn8Rdls0XYBy',
+        # 'HOST': '164.52.192.71',
+        # # 'PORT': '5432',
     }
 }
 
