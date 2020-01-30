@@ -18,7 +18,6 @@ from rest_framework import response
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -42,6 +41,7 @@ INSTALLED_APPS = [
     'offers.apps.OffersConfig',
     'favourite.apps.FavouriteConfig',
     'VideoBook.apps.VideobookConfig',
+    'homepage.apps.HomepageConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,20 +80,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = (
-        'content-disposition',
-        'accept-encoding',
-        'content-type',
-        'accept',
-        'origin',
-        'authorization',
-        'cache-control',
-        'x-requested-with',
-        )
+    'content-disposition',
+    'accept-encoding',
+    'content-type',
+    'accept',
+    'origin',
+    'authorization',
+    'cache-control',
+    'x-requested-with',
+)
 
 ROOT_URLCONF = 'booktap.urls'
 
@@ -115,7 +114,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'booktap.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -136,7 +134,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -155,7 +152,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -169,17 +165,20 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'homepage/static')
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticresources')
+
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTHENTICATION_BACKENDS = (
-        'django.contrib.auth.backends.ModelBackend',
-    )
-
-
+    'django.contrib.auth.backends.ModelBackend',
+)

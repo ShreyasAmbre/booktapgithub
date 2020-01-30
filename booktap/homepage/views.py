@@ -4,9 +4,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 
 
-
 def homepage(request):
-    return render(request, 'homepage.html')
+    return render(request, 'index.html')
 
 
 class Profile(APIView):

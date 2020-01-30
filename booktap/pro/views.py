@@ -118,19 +118,19 @@ def login(request):
 
         user = auth.authenticate(username=username, password=password)
         if user is not None:
-            # auth.login(request, user)
-            # try:
-            #     instance = User.objects.get(username=username)
-            # except Signin.DoesNotExist:
-            #     return Response({'Errors': 'Object not found'}, status=404)
-            #
-            # serialized = UserSerializer(instance)
-            # return Response(serialized.data)
+            auth.login(request, user)
+            try:
+                instance = User.objects.get(username=username)
+            except Signin.DoesNotExist:
+                return Response({'Errors': 'Object not found'}, status=404)
+
+            serialized = UserSerializer(instance)
+            return Response(serialized.data, {'Status': 'OK'})
             # # return render(request, 'profile.html', {'Serialized': serialized})
 
-            userobj = User.objects.get(username=username)
-            print(type(userobj), userobj, ':- Printed from Pro views.py')
-            return render(request, 'customer.html', {'USER': userobj})
+            # userobj = User.objects.get(username=username)
+            # print(type(userobj), userobj, ':- Printed from Pro views.py')
+            # return render(request, 'customer.html', {'USER': userobj})
         else:
             return render(request, 'login.html')
     return render(request, 'login.html')
