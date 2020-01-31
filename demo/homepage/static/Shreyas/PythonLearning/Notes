@@ -1,0 +1,54 @@
+Notes While Learning Python
+
+1. Hello Worl Program in python
+2. Variable decalrtion
+3. Datatypes
+4. Python Collection
+
+
+* * * * * * Explanation of Chapters Above * * * * * * *
+
+3. Datatypes :- Number (Typecasting:- int(), float())
+                String (Typecasting:- str())
+                Boolean ((values:- True, False) (Typecasting:- bool() ))
+                List (Typecasting:- list()) ( var1 = [val, val2, ....] )
+                Dict (Typecasting:- dict()) ( var1 = {"key1": "Value1", "Key2": VALue2, ....}
+                Tuple (Typecasting:- dict()) ( var1 = (val, val2, ....) )
+                Set (Typecasting:- set())
+                Range ;- Used for itrating any object range(10) :- It will print output 0 to 9
+
+* * * * * * * * * * * * * * * * * * * * *
+Python Data Collectino
+
+1. namedtuple :- it store the value in specified named
+2. deque (IMP) :- it is used for simple inseertion and deletion of element in List using varibale_name.append()
+  varibale_name_pop() methods
+
+3. Counter (IMP) :- It is useful to check the repeated value from the list and print how many times it is repeated in key
+value pair fomrat
+
+4. OrderDict :- It is used to store the value in order and if we change the value the order doesnt change
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * *
+Difference Python List & Python Array
+
+in List :-         Diffrent Datatypes values can be stores
+in Python Array :- No Different Datatypes, it require to import the array module in program, has specific
+                    syntax to implement
+operation List & Array :- len():- use to know the length of the array ,
+
+* * * Addinf an Array or List Element * * *
+append() :- used to add value at end,
+extend(arrayname, [val1, val2, .., valn]) :-  used to add multiple value at the end of the array
+insert(index number , value to be inserted) :- use to insert the value as per the user specified location
+
+* * * Removing an Array Element or List Element * * *
+pop(index number) :- us to remove the value from the index number metion in pop() method
+remove(value to remove) :- Value to remove
+
+* * * Array and List Concatenation * * *
+to join the array we can use  + plus symbol
+Note :- Concatination will only work when TWO DIFFERENT ARRAYS HAVING SAME DATATYPES
+
+* * * Slicing of Array & List * * *
+Looping Of Array & List :- for loop, while loop, with the help of range().
